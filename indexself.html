@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>modal self</title>
+    <meta name="viewport" content="width = device-width,initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+
+        body {
+            background: #ddd;
+        }
+        #open {
+            border:1px solid #333;
+            padding: 5px 20px;
+            text-align: center;
+            width: 180px;
+            margin: 50px auto;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        
+
+        #cover {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #000;
+            opacity: 0.6;
+            z-index:1;
+            display: none;
+            
+        }
+
+       #modal {
+            width: 300px;
+            margin: 0 auto;
+            position: relative;
+            background: #fff;
+            border-radius: 3px;
+            z-index:10;
+            padding: 10px;
+            display: none;
+            
+        }
+
+        body.modal-open #modal ,body.modal-open #cover{
+            display: block;
+            transition: 0.4s;
+            
+        }
+
+        #close {
+            padding: 5px 20px;
+            text-align: center;
+            border: 1px solid #333;
+            width: 150px;
+            margin: 0 auto;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="">
+    <div id="open">詳細を見る</div>
+
+    <div id="cover"></div>
+
+    <div id="modal">
+        <p>こんにちわこんにちわこんにちわこんにちわこんにちわこんにちわこんにちわこんにちわこんにちわこんにちわ</p>
+
+        <div id="close">閉じる</div>
+    </div>
+
+    
+    <script>
+
+        var open = document.getElementById('open');
+        var close = document.getElementById('close');
+
+        open.addEventListener('click',function(){
+            document.body.classList = 'modal-open';
+            
+        });
+
+        close.addEventListener('click',function(){
+            document.body.classList = '';
+        });
+
+
+        
+    </script>
+</body>
+</html>
